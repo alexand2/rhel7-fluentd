@@ -3,7 +3,8 @@ LABEL maintainer "Arctiq Inc. <dev@arctiq.ca>"
 
 
 
-RUN yum update -y
+RUN yum install -y gcc ruby-devel ruby-gems make gcc && \
+    yum clean all
 
 RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
 
