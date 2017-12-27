@@ -4,7 +4,8 @@ LABEL maintainer "Arctiq Inc. <dev@arctiq.ca>"
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
-RUN yum install -y gcc ruby-devel ruby-gems make gcc && \
+RUN yum clean all && \
+    yum install -y gcc ruby-devel ruby-gems make gcc && \
     yum clean all
 
 RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
