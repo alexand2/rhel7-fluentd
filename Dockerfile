@@ -1,4 +1,4 @@
-FROM rhel7
+FROM rhel7/rhel
 LABEL maintainer "Arctiq Inc. <dev@arctiq.ca>"
 
 
