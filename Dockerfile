@@ -3,7 +3,7 @@ LABEL maintainer "Arctiq Inc. <dev@arctiq.ca>"
 
 
 
-RUN yum update
+RUN yum update -y
 
 RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
 
