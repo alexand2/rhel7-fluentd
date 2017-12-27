@@ -4,6 +4,9 @@ LABEL maintainer "Arctiq Inc. <dev@arctiq.ca>"
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
+RUN yum install -y yum-utils && \
+    yum-config-manager --enable rhel-7-server-optional-rpms
+
 RUN yum clean all && \
     yum install -y gcc ruby-devel ruby-gems make gcc && \
     yum clean all
