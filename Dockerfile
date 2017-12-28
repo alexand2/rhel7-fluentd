@@ -11,8 +11,10 @@ RUN yum clean all && \
     yum install -y gcc ruby-devel ruby-gems make gcc && \
     yum clean all
 
-RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent2.sh | sh
-
+ADD install_fluentd.sh . 
+RUN chmod +x install_fluentd.sh & \
+    ./install_fluentd.sh
+    
 RUN mkdir -p /fluentd/log
 RUN mkdir -p /fluentd/etc /fluentd/plugins
 
