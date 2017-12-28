@@ -12,9 +12,9 @@ RUN yum clean all && \
     yum clean all
 
 ADD install_fluentd.sh . 
-RUN chmod +x install_fluentd.sh & \
+RUN chmod +x install_fluentd.sh && \
     ./install_fluentd.sh
-    
+
 RUN mkdir -p /fluentd/log
 RUN mkdir -p /fluentd/etc /fluentd/plugins
 
