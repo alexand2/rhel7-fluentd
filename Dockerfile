@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhel7/rhel
+FROM registry.access.redhat.com/rhscl/ruby-23-rhel7
 LABEL maintainer "Arctiq Inc. <dev@arctiq.ca>"
 
 ENV FLUENTD_OPT=""
