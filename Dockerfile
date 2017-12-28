@@ -4,6 +4,8 @@ LABEL maintainer "Arctiq Inc. <dev@arctiq.ca>"
 ENV FLUENTD_OPT=""
 ENV FLUENTD_CONF="fluent.conf"
 
+USER  root
+
 #RUN yum install -y yum-utils && \
 #    yum-config-manager --enable rhel-7-server-optional-rpms
 
