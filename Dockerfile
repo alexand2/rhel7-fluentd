@@ -11,9 +11,11 @@ RUN yum clean all && \
     yum install -y gcc ruby-devel ruby-gems make gcc && \
     yum clean all
 
-ADD install_fluentd.sh . 
-RUN chmod +x install_fluentd.sh && \
-    ./install_fluentd.sh
+ADD td.repo /etc/yum.repos.d/
+RUN rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
+RUN  yum check-update && \
+    yes | yum install -y td-agent
+
 
 RUN mkdir -p /fluentd/log
 RUN mkdir -p /fluentd/etc /fluentd/plugins
