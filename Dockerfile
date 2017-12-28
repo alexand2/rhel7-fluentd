@@ -24,12 +24,12 @@ RUN scl enable rh-ruby23 'gem update --system --no-document' && \
     ln -s /opt/rh/rh-ruby23/root/usr/local/bin/* /usr/bin
 
 
-RUN mkdir -p /fluentd/log
-RUN mkdir -p /fluentd/etc /fluentd/plugins
+RUN mkdir -p /fluentd/log && \
+    mkdir -p /fluentd/etc /fluentd/plugins
+    
+RUN fluent-gem install fluent-plugin-elasticsearch
 
 COPY fluent.conf /fluentd/etc/
-#COPY entrypoint.sh /bin/
-#RUN chmod +x /bin/entrypoint.sh
 
 EXPOSE 24224 5140
 
