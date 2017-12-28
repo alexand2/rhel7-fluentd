@@ -27,7 +27,7 @@ RUN scl enable rh-ruby23 'gem update --system --no-document' && \
 RUN mkdir -p /fluentd/log && \
     mkdir -p /fluentd/etc /fluentd/plugins
 
-RUN gem install fluent-plugin-secure-forward fluent-plugin-elasticsearch
+RUN fluent-gem install fluent-plugin-secure-forward fluent-plugin-elasticsearch
 
 COPY fluent.conf /fluentd/etc/
 
