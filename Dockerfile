@@ -11,9 +11,15 @@ ENV FLUENTD_CONF="fluent.conf"
 #    yum install -y gcc ruby-devel ruby-gems make gcc && \
 #    yum clean all
 
-ADD td.repo /etc/yum.repos.d/
-RUN rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
-RUN yum install -y td-agent
+#ADD td.repo /etc/yum.repos.d/
+#RUN rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
+#RUN yum install -y td-agent
+
+
+RUN scl enable rh-ruby23 'gem update --system --no-document' && \
+    scl enable rh-ruby23 'gem install --no-document json_pure jemalloc' && \
+    scl enable rh-ruby23 "gem install --no-document fluentd" && \
+    ln -s /opt/rh/rh-ruby23/root/usr/local/bin/* /usr/bin
 
 
 RUN mkdir -p /fluentd/log
