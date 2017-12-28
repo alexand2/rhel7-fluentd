@@ -13,8 +13,7 @@ RUN yum clean all && \
 
 ADD td.repo /etc/yum.repos.d/
 RUN rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
-RUN  yum check-update && \
-    yes | yum install -y td-agent
+RUN yum install -y td-agent
 
 
 RUN mkdir -p /fluentd/log
