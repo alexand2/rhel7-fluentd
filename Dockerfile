@@ -28,11 +28,11 @@ RUN mkdir -p /fluentd/log
 RUN mkdir -p /fluentd/etc /fluentd/plugins
 
 COPY fluent.conf /fluentd/etc/
-COPY entrypoint.sh /bin/
-RUN chmod +x /bin/entrypoint.sh
+#COPY entrypoint.sh /bin/
+#RUN chmod +x /bin/entrypoint.sh
 
 EXPOSE 24224 5140
 
-ENTRYPOINT ["/bin/entrypoint.sh"]
+#ENTRYPOINT ["/bin/entrypoint.sh"]
 
 CMD exec fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins $FLUENTD_OPT
