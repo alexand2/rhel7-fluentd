@@ -19,6 +19,7 @@ RUN mkdir -p /fluentd/log && \
 
 COPY fluent.conf /fluentd/etc/
 ADD entrypoint.sh /bin/
+RUN chmod +x /bin/entrypoint.sh
 
 EXPOSE 24224 5140
 
