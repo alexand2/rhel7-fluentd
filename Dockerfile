@@ -20,7 +20,7 @@ RUN mkdir -p /fluentd/log && \
 COPY /configs/${FLUENTD_CONF} /fluentd/etc/
 ADD set_user.sh .
 RUN chmod +x set_user.sh && \
-    set_user.sh
+    ./set_user.sh
 
 USER 1002
 
