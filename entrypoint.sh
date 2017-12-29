@@ -1,4 +1,4 @@
-#!/usr/bin/dumb-init /bin/sh
+#!/bin/sh
 
 uid=${FLUENT_UID:-1000}
 
@@ -15,5 +15,3 @@ export HOME=/home/fluent
 # chown home and data folder
 chown -R fluent /home/fluent
 chown -R fluent /fluentd
-
-exec gosu fluent "$@"
