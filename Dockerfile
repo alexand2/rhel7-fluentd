@@ -25,4 +25,6 @@ EXPOSE 24224 5140
 
 ENTRYPOINT ["/bin/entrypoint.sh"]
 
+USER 1000
+
 CMD exec fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins $FLUENTD_OPT
