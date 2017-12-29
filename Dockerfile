@@ -17,13 +17,13 @@ RUN mkdir -p /fluentd/log && \
     mkdir -p /fluentd/etc /fluentd/plugins
 
 
-COPY /configs/fluent.conf /fluentd/etc/
-ADD entrypoint.sh .
+COPY /configs/${FLUENTD_CONF} /fluentd/etc/
+ADD set_user.sh .
 RUN chmod +x set_user.sh && \
     set_user.sh
 
 USER 1002
 
-EXPOSE 24224 5140
+EXPOSE 24224
 
 CMD exec fluentd -c /fluentd/etc/${FLUENTD_CONF} -p /fluentd/plugins $FLUENTD_OPT
