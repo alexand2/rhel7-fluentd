@@ -5,6 +5,6 @@ node {
 
     stage 'deploy'
 
-    openshiftDeploy(deploymentConfig: 'rhel7-fluentd')
+    openshiftDeploy(deploymentConfig: 'dc/rhel7-fluentd')
 
 }
