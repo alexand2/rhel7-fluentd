@@ -5,7 +5,7 @@ items:
   metadata:
     labels:
       app: rhel7-fluentd
-    name: rhel7-fluentd
+    name: rhel7-fluentd-bc
   spec:
     nodeSelector: null
     output:
