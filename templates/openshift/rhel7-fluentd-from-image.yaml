@@ -52,15 +52,6 @@ spec:
   test: false
   triggers:
   - type: ConfigChange
-  - imageChangeParams:
-      automatic: true
-      containerNames:
-      - rhel7-fluentd
-      from:
-        kind: ImageStreamTag
-        name: rhel7-fluentd:latest
-        namespace: template-test
-    type: ImageChange
 status:
   availableReplicas: 0
   latestVersion: 0
