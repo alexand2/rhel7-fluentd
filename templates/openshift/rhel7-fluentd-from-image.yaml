@@ -71,7 +71,7 @@ items:
     updatedReplicas: 0
 - apiVersion: v1
   data:
-    fluent.config: "<source>\n  @type secure_forward\n  self_hostname \"#{ENV['HOSTNAME']}\"\n
+    fluent.conf: "<source>\n  @type secure_forward\n  self_hostname \"#{ENV['HOSTNAME']}\"\n
       \ bind 0.0.0.0\n  port  24224\n  shared_key supersecretkey\n  secure no\n</source>\n<match
       *.**>\n  @type copy\n  <store>\n    @type elasticsearch\n    logstash_format
       true\n    host  elk.elk.svc.cluster.local\n    port 9200 \n    index_name fluentd
