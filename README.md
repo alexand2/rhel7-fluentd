@@ -16,5 +16,7 @@ The following plugins are installed:
 The basic configuration in this container should be modified. 
 In OpenShift, ConfigMaps should be used. 
 
+## OpenShift Templates
+The templates directory has OCP files that can be used with a docker build strategy or to deploy from dockerhub. 
+
 ## Todo
-- Create OpenShift template. 
