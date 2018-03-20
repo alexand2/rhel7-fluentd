@@ -11,6 +11,7 @@ the original intention is to be used in OpenShift.
 The following plugins are installed: 
 - elasicsearch 
 - secure forward
+- remote_syslog -- https://github.com/dlackty/fluent-plugin-remote_syslog
 
 ## ConfigMaps
 The basic configuration in this container should be modified. 
