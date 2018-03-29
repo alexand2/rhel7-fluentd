@@ -9,7 +9,7 @@ USER  root
 RUN scl enable rh-ruby23 'gem update --system --no-document' && \
     scl enable rh-ruby23 'gem install --no-document json_pure jemalloc' && \
     scl enable rh-ruby23 "gem install --no-document fluentd" && \
-    scl enable rh-ruby23 "gem install --no-document fluent-plugin-secure-forward fluent-plugin-elasticsearch fluent-plugin-remote_syslog" && \
+    scl enable rh-ruby23 "gem install --no-document fluent-plugin-secure-forward fluent-plugin-elasticsearch fluent-plugin-remote_syslog fluent-plugin-grep fluent-plugin-route" && \
     ln -s /opt/rh/rh-ruby23/root/usr/local/bin/* /usr/bin
 
 
