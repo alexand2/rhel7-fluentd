@@ -12,6 +12,8 @@ The following plugins are installed:
 - elasicsearch 
 - secure forward
 - remote_syslog -- https://github.com/dlackty/fluent-plugin-remote_syslog
+- grep
+- route
 
 ## ConfigMaps
 The basic configuration in this container should be modified. 
