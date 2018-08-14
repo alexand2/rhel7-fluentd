@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: rhel7-fluentd
+  name: rhel7-fluentd
+spec:
+  ports:
+    - port: 24224
+      protocol: TCP
+      targetPort: 24224
+  selector:
+    app: rhel7-fluentd
+  sessionAffinity: ClientIP
+  type: ClusterIP
+status:
+  loadBalancer: {}
